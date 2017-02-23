@@ -4,8 +4,10 @@
 namespace App\Models;
 
 
-class Article 
+class Article extends \App\Model
 {
+    const TABLE = 'articles';
+
     protected $author;
     protected $header;
     protected $text;
