@@ -6,9 +6,9 @@ class Article extends \App\Model
 {
     const TABLE = 'articles';
 
-    protected $author;
-    protected $header;
-    protected $text;
+    public $author;
+    public $header;
+    public $text;
     
     public function getId() 
     {
