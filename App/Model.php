@@ -23,7 +23,7 @@ abstract class Model
                 [':id' => $id]
                 );
         if (count($data) > 0) {
-            return $data;
+            return $data[0];
         } else {
             return false;
         }
