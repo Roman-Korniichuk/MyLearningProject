@@ -1,14 +1,18 @@
 <?php
 
 namespace App;
+use App\Config;
 
 class DB 
 {
     use Singleton;
+    
     protected $dbh;
     
     protected function __construct() {
-        $this->dbh = new \PDO('mysql:host=127.0.0.1;dbname=site', 'root', '');
+        $config = Config::instance();
+        $data = $config->data;
+        $this->dbh = new \PDO('mysql:host=' . $data['host'] . ';dbname=' . $data['db'], $data['user'], $data['pass']);
     }
     public function execute($sql, array $data = [])
     {
