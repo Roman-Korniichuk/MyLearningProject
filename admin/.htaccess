@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName admin
+AuthUserFile  C:/open/OpenServer/domains/app/admin/.htpasswd
+Require valid-user
