@@ -9,8 +9,10 @@ class View
         $this->data[$name] = $value;
     }
     public function display($template) {
-        foreach ($this->data as $name=>$value) {
-            $$name = $value;
+        if (!empty($this->data)) {    
+            foreach ($this->data as $name=>$value) {
+               $$name = $value;
+            }
         }
         include $template;
     }
