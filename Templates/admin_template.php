@@ -28,6 +28,7 @@
             <?php } ?>
         </table>
         <br><a href="update.php">Add new</a>
+        <br><a href="../index.php">Back to site</a>
         <script src="../js/jquery-3.1.1.js"></script>
         <script src="../js/del.js"></script>
     </body>
