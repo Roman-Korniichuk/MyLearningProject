@@ -6,4 +6,15 @@ td, th {
     padding: 10px;
     border: 1px solid grey;    
 }
-
+.delete {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.deleted {
+    color:red;
+    display: none;
+}
+:visited {
+    color: blue;
+}
