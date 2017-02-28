@@ -6,6 +6,7 @@ if (isset($_GET['id'])) {
     $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_STRING);
     $article = App\Models\Article::findById($id);
     if (false !== $article) {
+        var_dump($article->getAuthor());
         $page = new \App\View();
         $page->assign('article', $article);
         $page->display(__DIR__ . '/Templates/article_template.php');
