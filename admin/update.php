@@ -22,6 +22,7 @@ if ((isset($_POST['author']))&&(isset($_POST['header_article']))&&(isset($_POST[
     header('location:index.php');
 }
 
-$page->assign('article', $article);
+//$page->assign('article', $article);
+$page->article = $article;
 $page->display(__DIR__ . '/../Templates/admin_update.php');
 
