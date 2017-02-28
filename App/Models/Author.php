@@ -1,8 +1,8 @@
 <?php
-
+ 
 namespace App\Models;
 
-class User extends \App\Model 
+class Author extends \App\Model 
     implements HasEmail
 {
     const TABLE='users';
@@ -12,5 +12,8 @@ class User extends \App\Model
     
     public function getEmail() {
         return $this->email;
+    }
+    public function getName() {
+        return $this->name;
     }
 }

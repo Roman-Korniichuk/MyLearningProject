@@ -6,7 +6,7 @@ class Article extends \App\Model
 {
     const TABLE = 'articles';
 
-    public $author;
+    public $author_id;
     public $header;
     public $text;
     
@@ -20,7 +20,9 @@ class Article extends \App\Model
     }
     public function getAuthor() 
     {
-        return $this->author;
+        //return $this->author_id;
+        $author = Author::findById($this->author_id);
+        return $author->getName();
     }
     public function getHeader() 
     {

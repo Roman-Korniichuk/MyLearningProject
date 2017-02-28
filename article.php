@@ -7,7 +7,8 @@ if (isset($_GET['id'])) {
     $article = App\Models\Article::findById($id);
     if (false !== $article) {
         $page = new \App\View();
-        $page->assign('article', $article);
+        //$page->assign('article', $article);
+        $page->article = $article;
         $page->display(__DIR__ . '/Templates/article_template.php');
     } else {
         header('location:index.php');
