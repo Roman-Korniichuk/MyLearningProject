@@ -9,7 +9,7 @@ class Article extends \App\Model
     public $author_id;
     public $header;
     public $text;
-    
+     
     public function getId() 
     {
         return $this->id;
@@ -20,7 +20,6 @@ class Article extends \App\Model
     }
     public function getAuthor() 
     {
-        //return $this->author_id;
         $author = Author::findById($this->author_id);
         return $author->getName();
     }
