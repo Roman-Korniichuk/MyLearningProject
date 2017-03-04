@@ -17,7 +17,7 @@ and open the template in the editor.
             <h2><?php echo $article->getHeader(); ?></h2>
             <div class="desc">
                 <?php echo $article->getDescription(); ?> <br>
-                <a href="../article.php?id=<?php echo $article->getId(); ?>">Read more</a> <br> <hr>
+                <a href="index.php?act=Article&id=<?php echo $article->getId(); ?>">Read more</a> <br> <hr>
             </div>
         </div>
             <?php } ?>
