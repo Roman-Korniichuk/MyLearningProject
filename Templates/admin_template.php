@@ -17,7 +17,7 @@
             <?php foreach ($articles as $article) { ?>
             <tr>
                 <td>
-                    <a href="update.php?id=<?= $article->getId(); ?>" id="<?= $article->getId(); ?>">Update</a> <br>
+                    <a href="index.php?act=Update&id=<?= $article->getId(); ?>" id="<?= $article->getId(); ?>">Update</a> <br>
                     <span class="delete" id="<?= $article->getId(); ?>">Delete</span>
                     <span class="deleted" id="<?= $article->getId(); ?>">DELETED</span>
                 </td>
@@ -27,7 +27,7 @@
             </tr>
             <?php } ?>
         </table>
-        <br><a href="update.php">Add new</a>
+        <br><a href="index.php?act=Update">Add new</a>
         <br><a href="../index.php">Back to site</a>
         <script src="../js/jquery-3.1.1.js"></script>
         <script src="../js/del.js"></script>
