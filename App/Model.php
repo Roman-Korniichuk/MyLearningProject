@@ -24,7 +24,8 @@ abstract class Model
         if (count($data) > 0) {
             return $data[0];
         } else {
-            return false;
+            throw new Exceptions\Db('404 !');
+            //return false;
         }
     }
     public function isNew()
