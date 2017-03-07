@@ -21,5 +21,8 @@ and open the template in the editor.
             </div>
         </div>
             <?php } ?>
+        <footer>
+            <?php print PHP_Timer::resourceUsage(); ?>
+        </footer>
     </body>
 </html>

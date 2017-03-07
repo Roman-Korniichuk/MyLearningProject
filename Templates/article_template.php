@@ -16,5 +16,8 @@ and open the template in the editor.
             <span class="author">Author: <?php echo $article->getAuthor(); ?></span>
         </div>
         <a href="../index.php">Back</a>
+        <footer>
+            <?php print PHP_Timer::resourceUsage(); ?>
+        </footer>
     </body>
 </html>
