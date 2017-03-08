@@ -7,12 +7,12 @@ abstract class Model
     const TABLE = '';
     public $id;
 
-
     public static function getAll()
     {
         $db = DB::instance();
         return $db->query('SELECT * FROM ' . static::TABLE, static::class);
     }
+    
     public static function findById($id)
     {
         $db = DB::instance();
@@ -28,10 +28,12 @@ abstract class Model
             //return false;
         }
     }
+    
     public function isNew()
     {
         return empty($this->id);
     }
+    
     public function insert()
     {
         if (!$this->isNew()) {
@@ -53,6 +55,7 @@ abstract class Model
             $db->execute($sql, $vals);
         }
     }
+    
     public function update($id)
     {
         $object = static::findById($id);
@@ -76,6 +79,7 @@ abstract class Model
             $db->execute($sql, $vals);
         }
     }
+    
     public function save()
     {
        if ($this->isNew()) {
@@ -84,9 +88,9 @@ abstract class Model
            return $this->update($this->id);
        }
     }
+    
     public function delete()
     {
-        // DELETE FROM articles WHERE id=42
         if ($this->isNew()) {
             return false;
         } else {
@@ -96,6 +100,13 @@ abstract class Model
             $db->execute($sql, $data);
         }
     }
+    
+    /**
+     * Function-generator. Gets data from DB not as array, but as object, line-to-line.
+     * Can be used only in foreach construction
+     * 
+     * @return object
+     */
     public static function getEach()
     {
         $db = DB::instance();

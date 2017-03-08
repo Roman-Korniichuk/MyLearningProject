@@ -38,6 +38,16 @@ class DB
         }
     }
     
+    /**
+     * 
+     * Function-generator. Can be used only in foreach construction
+     * 
+     * @param string $sql
+     * @param string $class
+     * @param array $data
+     * 
+     * @return objects of $class type
+     */
     public function queryEach($sql, $class, array $data=[])
     {
         $sth = $this->dbh->prepare($sql);
