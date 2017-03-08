@@ -96,4 +96,12 @@ abstract class Model
             $db->execute($sql, $data);
         }
     }
+    public static function getEach()
+    {
+        $db = DB::instance();
+        $sql = 'SELECT * FROM ' . static::TABLE;
+        foreach ($db->queryEach($sql, static::class) as $obj) {
+            yield $obj;
+        }
+    }
 }

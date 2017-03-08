@@ -9,7 +9,8 @@ class DB
     
     protected $dbh;
     
-    protected function __construct() {
+    protected function __construct() 
+    {
         $config = Config::instance();
         $data = $config->data;
         try {
@@ -20,18 +21,30 @@ class DB
             throw new \App\Exceptions\Db('Something bad with connection to DB' . $msg);
         }
     }
+    
     public function execute($sql, array $data = [])
     {
         $sth = $this->dbh->prepare($sql);
         $res = $sth->execute($data);
         return $res;
     }
+    
     public function query($sql, $class, array $data = [])
     {
         $sth = $this->dbh->prepare($sql);
         $res = $sth->execute($data);
         if (false !== $res) {
             return $sth->fetchAll(\PDO::FETCH_CLASS, $class);
+        }
+    }
+    
+    public function queryEach($sql, $class, array $data=[])
+    {
+        $sth = $this->dbh->prepare($sql);
+        $sth->execute($data);
+        $sth->setFetchMode(\PDO::FETCH_CLASS, $class); 
+        while ($row = $sth->fetch(\PDO::FETCH_CLASS, \PDO::FETCH_ORI_FIRST)) {
+            yield $row;
         }
     }
 }
